@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.view.MotionEvent;
 import android.view.View;
+import android.widget.TextView;
 
 /**
  * An example full-screen activity that shows and hides the system UI (i.e.
@@ -116,6 +117,8 @@ public class StartScreen extends Activity {
 		// while interacting with the UI.
 		findViewById(R.id.dummy_button).setOnTouchListener(
 				mDelayHideTouchListener);
+		findViewById(R.id.fullscreen_content).setOnTouchListener(
+				mDelayHideTouchListener2);
 	}
 
 	@Override
@@ -133,9 +136,38 @@ public class StartScreen extends Activity {
 	 * system UI. This is to prevent the jarring behavior of controls going away
 	 * while interacting with activity UI.
 	 */
+	
+	//// Touch Coordinate //
+	
+
+	View.OnTouchListener mDelayHideTouchListener2 = new View.OnTouchListener() {
+		@Override
+		public boolean onTouch(View view, MotionEvent motionEvent) {
+		
+			
+			TextView x;
+		
+		    x=(TextView)findViewById(R.id.fullscreen_content); 
+			
+			x.setText("Touch coordinates : " +
+	                String.valueOf(motionEvent.getX()) + "x" + String.valueOf(motionEvent.getY()));  
+		    //x.setText("Step One: blast egg");
+			
+		
+			return true;
+		}
+	};
+
+	
+	////*****************
+	
+	
+	
 	View.OnTouchListener mDelayHideTouchListener = new View.OnTouchListener() {
 		@Override
 		public boolean onTouch(View view, MotionEvent motionEvent) {
+		
+			
 			if (AUTO_HIDE) {
 				delayedHide(AUTO_HIDE_DELAY_MILLIS);
 			}
