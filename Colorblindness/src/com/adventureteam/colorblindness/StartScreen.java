@@ -4,11 +4,17 @@ import com.adventureteam.colorblindness.util.SystemUiHider;
 
 import android.annotation.TargetApi;
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.app.Dialog;
+import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
+import android.view.Gravity;
 import android.view.MotionEvent;
 import android.view.View;
+import android.widget.LinearLayout;
+import android.widget.PopupWindow;
 import android.widget.TextView;
 
 /**
@@ -45,6 +51,7 @@ public class StartScreen extends Activity {
 	 * The instance of the {@link SystemUiHider} for this activity.
 	 */
 	private SystemUiHider mSystemUiHider;
+
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -105,7 +112,9 @@ public class StartScreen extends Activity {
 			@Override
 			public void onClick(View view) {
 				if (TOGGLE_ON_CLICK) {
+					
 					mSystemUiHider.toggle();
+					
 				} else {
 					mSystemUiHider.show();
 				}
@@ -115,6 +124,10 @@ public class StartScreen extends Activity {
 		// Upon interacting with UI controls, delay any scheduled hide()
 		// operations to prevent the jarring behavior of controls going away
 		// while interacting with the UI.
+//		public void blahAlert(){
+//			new AlertDialog.Builder(this).setTitle("Argh").setMessage("Watch out!").setNeutralButton("Close", null).show();  
+//			
+//		}
 		findViewById(R.id.dummy_button).setOnTouchListener(
 				mDelayHideTouchListener);
 		findViewById(R.id.fullscreen_content).setOnTouchListener(
@@ -130,12 +143,18 @@ public class StartScreen extends Activity {
 		// are available.
 		delayedHide(100);
 	}
+	
+	
 
+	
+
+	
 	/**
 	 * Touch listener to use for in-layout UI controls to delay hiding the
 	 * system UI. This is to prevent the jarring behavior of controls going away
 	 * while interacting with activity UI.
 	 */
+	
 	
 	//// Touch Coordinate //
 	
@@ -160,8 +179,7 @@ public class StartScreen extends Activity {
 
 	
 	////*****************
-	
-	
+
 	
 	View.OnTouchListener mDelayHideTouchListener = new View.OnTouchListener() {
 		@Override
