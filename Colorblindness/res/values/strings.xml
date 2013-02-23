@@ -3,7 +3,8 @@
 
     <string name="app_name">Colorblindness</string>
     <string name="title_activity_start_screen">StartScreen</string>
-    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_button">Reset</string>
     <string name="dummy_content">DUMMY\nCONTENT</string>
+    <string name="ColorType">Red</string>
 
 </resources>
