@@ -24,20 +24,47 @@ public final class R {
         public static final int ic_launcher=0x7f020000;
     }
     public static final class id {
-        public static final int action_settings=0x7f080002;
-        public static final int imageView1=0x7f080001;
+        public static final int Button01=0x7f08000a;
+        public static final int Button02=0x7f08000b;
+        public static final int LinearLayout01=0x7f080001;
+        public static final int RadioButton01=0x7f080008;
+        public static final int RadioButton02=0x7f080009;
+        public static final int RadioButton03=0x7f080006;
+        public static final int RadioButton04=0x7f080007;
+        public static final int RadioButton05=0x7f080005;
+        public static final int RadioButton06=0x7f080004;
+        public static final int RadioButton07=0x7f080003;
+        public static final int action_settings=0x7f08000d;
+        public static final int imageView1=0x7f08000c;
+        public static final int radiocolor=0x7f080002;
         public static final int textView1=0x7f080000;
     }
     public static final class layout {
-        public static final int activity_viewfinder_ee368=0x7f030000;
+        public static final int activity_main=0x7f030000;
+        public static final int activity_settingactiv=0x7f030001;
+        public static final int activity_viewfinder_ee368=0x7f030002;
     }
     public static final class menu {
-        public static final int viewfinder_ee368=0x7f070000;
+        public static final int main=0x7f070000;
+        public static final int settingactiv=0x7f070001;
+        public static final int viewfinder_ee368=0x7f070002;
     }
     public static final class string {
+        public static final int Blue=0x7f050008;
+        public static final int Cyan=0x7f050009;
+        public static final int Green=0x7f050007;
+        public static final int Purple=0x7f05000a;
+        public static final int Red=0x7f050006;
+        public static final int Violet=0x7f05000b;
+        public static final int Yellow=0x7f05000c;
         public static final int action_settings=0x7f050001;
         public static final int app_name=0x7f050000;
+        public static final int cancelbutton=0x7f05000e;
         public static final int hello_world=0x7f050002;
+        public static final int label1=0x7f050005;
+        public static final int okbutton=0x7f05000d;
+        public static final int title_activity_main=0x7f050004;
+        public static final int title_activity_settingactiv=0x7f050003;
     }
     public static final class style {
         /** 

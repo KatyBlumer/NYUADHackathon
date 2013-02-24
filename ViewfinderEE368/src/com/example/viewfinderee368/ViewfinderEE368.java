@@ -5,6 +5,7 @@ import java.io.IOException;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.Color;
@@ -20,12 +21,16 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 
 // ----------------------------------------------------------------------
 
 public class ViewfinderEE368 extends Activity {    
     private Preview mPreview;
     private DrawOnTop mDrawOnTop;
+        public static TextView ColorText;
+         Button ResetButton;
+         Button SettingButton;
     //private View mView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,16 +51,53 @@ public class ViewfinderEE368 extends Activity {
         mPreview.setRotation(90);
         
         setContentView(mPreview);
-        Button btn= new Button(this);
-        btn.setText("Katy");
         
+         ResetButton= new Button(this);
+        ResetButton.setText("Reset");
+        ResetButton.setBackgroundColor(Color.GRAY);
+         SettingButton= new Button(this);
+        SettingButton.setText("Setting");
+        SettingButton.setBackgroundColor(Color.GRAY);
+       
+        
+         ColorText=new TextView(this);
+        ColorText.setText(" Tap to select Color");
+        ColorText.setTextIsSelectable(false);
+        ColorText.setTextSize(35);
+        ColorText.setTextColor(Color.BLACK);
+        ColorText.setBackgroundColor(Color.WHITE);
         LinearLayout linLayout = new LinearLayout(this);
         linLayout.setOrientation(LinearLayout.VERTICAL);
+        
+        
+        
+        SettingButton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+            	 // Perform action on click
+            	Intent intent = new Intent(getApplicationContext(), Settingactiv.class);
+				startActivity(intent);
+            	   ColorText.setTextColor(Color.RED);
+            }
+        });
+        ResetButton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                // Perform action on click
+            	   ColorText.setTextColor(Color.BLACK);
+            }
+        });
    
         linLayout.addView(mDrawOnTop,LayoutParams.WRAP_CONTENT,LayoutParams.WRAP_CONTENT);
-        linLayout.addView(btn,LayoutParams.WRAP_CONTENT,100);
-        btn.setY(-100);
+        linLayout.addView(ResetButton,LayoutParams.WRAP_CONTENT,100);
+        ResetButton.setY(-100);
+        ResetButton.setX(0);
+        linLayout.addView(SettingButton,LayoutParams.WRAP_CONTENT,100);
+        SettingButton.setY(-200);
+     
+        SettingButton.setX(  570);
+        
         addContentView(linLayout,  new LayoutParams(LayoutParams.WRAP_CONTENT,LayoutParams.WRAP_CONTENT));
+        
+        addContentView(ColorText,  new LayoutParams(LayoutParams.WRAP_CONTENT,LayoutParams.WRAP_CONTENT));
     //   mDrawOnTop.bringToFront();
        // addContentView(btn, new LayoutParams(LayoutParams.WRAP_CONTENT,100));
         
