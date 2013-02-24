@@ -6,7 +6,6 @@ import java.io.IOException;
 import android.app.Activity;
 import android.content.Context;
 import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Rect;
@@ -16,9 +15,11 @@ import android.os.Bundle;
 import android.view.SurfaceHolder;
 import android.view.SurfaceView;
 import android.view.View;
+import android.view.ViewGroup.LayoutParams;
 import android.view.Window;
 import android.view.WindowManager;
-import android.view.ViewGroup.LayoutParams;
+import android.widget.Button;
+import android.widget.LinearLayout;
 
 // ----------------------------------------------------------------------
 
@@ -39,8 +40,25 @@ public class ViewfinderEE368 extends Activity {
         //mDrawOnTop = new View(this);
         mDrawOnTop = new DrawOnTop(this);
         mPreview = new Preview(this,mDrawOnTop);
+        
+       
+        mPreview.setMinimumHeight(100);
+        mPreview.setRotation(90);
+        
         setContentView(mPreview);
-        addContentView(mDrawOnTop, new LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT));
+        Button btn= new Button(this);
+        btn.setText("Katy");
+        
+        LinearLayout linLayout = new LinearLayout(this);
+        linLayout.setOrientation(LinearLayout.VERTICAL);
+   
+        linLayout.addView(mDrawOnTop,LayoutParams.WRAP_CONTENT,LayoutParams.WRAP_CONTENT);
+        linLayout.addView(btn,LayoutParams.WRAP_CONTENT,100);
+        btn.setY(-100);
+        addContentView(linLayout,  new LayoutParams(LayoutParams.WRAP_CONTENT,LayoutParams.WRAP_CONTENT));
+    //   mDrawOnTop.bringToFront();
+       // addContentView(btn, new LayoutParams(LayoutParams.WRAP_CONTENT,100));
+        
     }
 }
 
