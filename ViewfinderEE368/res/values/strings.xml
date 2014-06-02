@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">ViewfinderEE368</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="title_activity_settingactiv">Settingactiv</string>
+    <string name="title_activity_main">MainActivity</string>
+    <string name="label1">label1</string>
+    <string name="Red">Red</string>
+    <string name="Green">Green</string>
+    <string name="Blue">Blue</string>
+    <string name="Cyan">Cyan</string>
+    <string name="Purple">Purple</string>
+    <string name="Violet">Violet</string>
+    <string name="Yellow">Yellow</string>
+    <string name="okbutton">Save</string>
+    <string name="cancelbutton">Cancel</string>
+
+</resources>
